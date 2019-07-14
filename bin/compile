@@ -106,20 +106,20 @@ for filename in `find . -name pubspec.yaml | grep -v dart-sdk | grep -v pub-cach
     export PATH="$PATH":"$HOME/pub-cache/bin" >> ~/.bashrc
     source ~/.bashrc
 
-    if [ -d "web" ]
-    then
-        message "*** Running pub build"
-        if [[ -z "$DART_BUILD_CMD" ]]
-        then
-            message 'Building with "pub build"'
-            /app/dart-sdk/bin/pub build
-        else
-            message "Building with \"$DART_BUILD_CMD\""
-            eval $DART_BUILD_CMD
-        fi
-    else
+#     if [ -d "web" ]
+#     then
+#         message "*** Running pub build"
+#         if [[ -z "$DART_BUILD_CMD" ]]
+#         then
+#             message 'Building with "pub build"'
+#             /app/dart-sdk/bin/pub build
+#         else
+#             message "Building with \"$DART_BUILD_CMD\""
+#             eval $DART_BUILD_CMD
+#         fi
+#     else
         message '*** Skipping pub build because "web" folder not found'
-    fi
+#     fi
 
 done
 
